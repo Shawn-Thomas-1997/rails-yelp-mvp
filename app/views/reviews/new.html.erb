@@ -1,6 +1,19 @@
-<h1>Leave a Review</h1>
+<div class="container text-center">
+  <div class="card shadow p-4 mb-4">
+    <h1>Leave a Review</h1>
 
-<%= simple_form_for [@restaurant, @review] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+    <%= simple_form_for [@restaurant, @review], html: { class: "mt-4" } do |f| %>
+      <div class="form-group">
+        <%= f.input :content, class: "form-control" %>
+      </div>
+
+      <div class="form-row justify-content-center">
+        <div class="form-group">
+          <%= f.input :rating, collection: 0..5, class: "form-control" %>
+        </div>
+      </div>
+
+      <%= f.submit "Submit Review", class: "btn btn-primary mt-2" %>
+    <% end %>
+  </div>
+</div>

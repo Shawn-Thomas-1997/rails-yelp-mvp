@@ -14,10 +14,10 @@ class ReviewsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
   private
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :rating)
   end
 end

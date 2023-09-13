@@ -1,11 +1,16 @@
-<h1>Welcome! Here are the Restaurants:</h1>
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= restaurant.name %></li>
-    <p>
-      <%= link_to "Show this restaurant", restaurant %>
-    </p>
-  <% end %>
-
-</ul>
-<%= link_to "New restaurant", new_restaurant_path %>
+<div class="container text-center">
+  <h1>Welcome!</h1>
+  <h2></h2>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to restaurant.name, restaurant, class: "text-decoration-none" %></h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "New restaurant", new_restaurant_path, class: "btn btn-primary mt-3" %>
+</div>

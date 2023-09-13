@@ -1,0 +1,15 @@
+<!-- app/views/restaurants/show.html.erb -->
+<%# <h2><%= @restaurant.name %>
+<%# <p><%= @restaurant.address %>
+<%# <p><%= @restaurant.category %>
+<%# <p style="color: green"><%= notice %>
+<%= render @restaurant %>
+<ul>
+<% @restaurant.reviews.each do |review| %>
+  <li><%= review.content %></li>
+<% end %>
+</ul>
+<div>|
+<%= link_to "Review this restaurant", reviews_path %>
+  <%= link_to "Back to restaurants", restaurants_path %>
+</div>
